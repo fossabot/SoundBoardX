@@ -4,24 +4,17 @@
             "outputFile": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/res/values-night-v8/values-night-v8.xml",
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/android-about-page-1.2.2.aar/a5dafa7d1199eb74f02aca61cbb555fd/res/values-night-v8/values-night-v8.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,141,263,361,495,573,687,753",
-                        "endColumns": "85,121,97,133,77,113,65,101",
-                        "endOffsets": "136,258,356,490,568,682,748,850"
-                    },
-                    "to": {
-                        "startLines": "7,8,9,10,11,12,13,14",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "338,424,546,644,778,856,970,1036",
-                        "endColumns": "85,121,97,133,77,113,65,101",
-                        "endOffsets": "419,541,639,773,851,965,1031,1133"
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,112,175,231,287",
+                        "endColumns": "56,62,55,55,50",
+                        "endOffsets": "107,170,226,282,333"
                     }
                 },
                 {
-                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/values-night-v8/values-night-v8.xml",
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/97d59f617a33345ac0b943847660fabd/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -38,13 +31,20 @@
                     }
                 },
                 {
-                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/android-about-page-1.2.2.aar/686f2288a838260ebefa8393ff0d6c4f/res/values-night-v8/values-night-v8.xml",
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/ea5fd4434a015f066099ab4fc20e97bb/res/values-night-v8/values-night-v8.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,112,175,231,287",
-                        "endColumns": "56,62,55,55,50",
-                        "endOffsets": "107,170,226,282,333"
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,141,263,361,495,573,687,753",
+                        "endColumns": "85,121,97,133,77,113,65,101",
+                        "endOffsets": "136,258,356,490,568,682,748,850"
+                    },
+                    "to": {
+                        "startLines": "7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "338,424,546,644,778,856,970,1036",
+                        "endColumns": "85,121,97,133,77,113,65,101",
+                        "endOffsets": "419,541,639,773,851,965,1031,1133"
                     }
                 }
             ]

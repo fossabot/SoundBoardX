@@ -65,34 +65,18 @@ public class SoundAdapter extends RecyclerView.Adapter<SoundAdapter.ViewHolder>
 		notifyDataSetChanged();
 	}
 
-	void showFunnySounds(Context context) {
+	void showRingtones(Context context) {
 		SharedPrefs.getInstance().setFavoritesShown(false);
 		SharedPrefs.getInstance().setSelectedCategory(2);
-		sounds = SoundStore.getFunnySounds(context);
+		sounds = SoundStore.getRingtones(context);
 		soundsCopy = sounds;
 		notifyDataSetChanged();
 	}
 
-	void showGamesSounds(Context context) {
+	void showNotifications(Context context) {
 		SharedPrefs.getInstance().setFavoritesShown(false);
-		SharedPrefs.getInstance().setSelectedCategory(3);
-		sounds = SoundStore.getGamesSounds(context);
-		soundsCopy = sounds;
-		notifyDataSetChanged();
-	}
-
-	void showMoviesSounds(Context context) {
-		SharedPrefs.getInstance().setFavoritesShown(false);
-		SharedPrefs.getInstance().setSelectedCategory(4);
-		sounds = SoundStore.getMoviesSounds(context);
-		soundsCopy = sounds;
-		notifyDataSetChanged();
-	}
-
-	void showMusicSounds(Context context) {
-		SharedPrefs.getInstance().setFavoritesShown(false);
-		SharedPrefs.getInstance().setSelectedCategory(5);
-		sounds = SoundStore.getMusicSounds(context);
+		SharedPrefs.getInstance().setSelectedCategory(2);
+		sounds = SoundStore.getNotifications(context);
 		soundsCopy = sounds;
 		notifyDataSetChanged();
 	}

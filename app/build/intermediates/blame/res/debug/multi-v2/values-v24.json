@@ -4,7 +4,7 @@
             "outputFile": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/values-v24/values-v24.xml",
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/97d59f617a33345ac0b943847660fabd/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/65581c52043f2d03e04c92d486df9cf1/res/values-v24/values-v24.xml",
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/99930c1809e53622ff20bcd7f9defb69/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

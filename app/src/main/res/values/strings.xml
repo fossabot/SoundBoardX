@@ -3,7 +3,7 @@
     <string name="roboto_cb">fonts/Roboto-BoldCondensed.ttf</string>
     <string name="roboto_r">fonts/Roboto-Regular.ttf</string>
 
-    <string name="version">1.1.1</string>
+    <string name="version">1.1.1g</string>
     <string name="app_name">SoundBoardX</string>
     <string name="app_description">Powerful yet lightweight material designed soundboard. Powered
         with a tiny particle system that gives your taps some swag.</string>
@@ -17,10 +17,6 @@
 
     <string name="categories">Categories</string>
     <string name="all">All</string>
-    <string name="funny">Funny</string>
-    <string name="games">Games</string>
-    <string name="movies">Movies</string>
-    <string name="music">Music</string>
 
     <string name="options">Options</string>
     <string name="particles">Particles</string>
@@ -56,4 +52,5 @@
     <string name="about_version_alt">The Cartwheel Galaxy (also known as ESO 350–40) is a lenticular galaxy and ring galaxy about 500 million light-years away in the constellation Sculptor.</string>
     <string name="connect">Connect with us</string>
     <string name="license">GPLv3+</string>
+    <string name="privacy_policy">Privacy Policy</string>
 </resources>

@@ -8,15 +8,15 @@ package android.support.v4;
 
 public final class R {
     public static final class attr {
-        public static final int font = 0x7f0400b1;
-        public static final int fontProviderAuthority = 0x7f0400b3;
-        public static final int fontProviderCerts = 0x7f0400b4;
-        public static final int fontProviderFetchStrategy = 0x7f0400b5;
-        public static final int fontProviderFetchTimeout = 0x7f0400b6;
-        public static final int fontProviderPackage = 0x7f0400b7;
-        public static final int fontProviderQuery = 0x7f0400b8;
-        public static final int fontStyle = 0x7f0400b9;
-        public static final int fontWeight = 0x7f0400ba;
+        public static final int font = 0x7f0400b4;
+        public static final int fontProviderAuthority = 0x7f0400b6;
+        public static final int fontProviderCerts = 0x7f0400b7;
+        public static final int fontProviderFetchStrategy = 0x7f0400b8;
+        public static final int fontProviderFetchTimeout = 0x7f0400b9;
+        public static final int fontProviderPackage = 0x7f0400ba;
+        public static final int fontProviderQuery = 0x7f0400bb;
+        public static final int fontStyle = 0x7f0400bc;
+        public static final int fontWeight = 0x7f0400bd;
     }
     public static final class bool {
         public static final int abc_action_bar_embed_tabs = 0x7f050000;
@@ -101,7 +101,7 @@ public final class R {
     }
     public static final class integer {
         public static final int cancel_button_image_alpha = 0x7f0a0004;
-        public static final int status_bar_notification_info_maxnum = 0x7f0a000a;
+        public static final int status_bar_notification_info_maxnum = 0x7f0a000b;
     }
     public static final class layout {
         public static final int notification_action = 0x7f0b0042;
@@ -121,7 +121,7 @@ public final class R {
         public static final int notification_template_part_time = 0x7f0b0050;
     }
     public static final class string {
-        public static final int status_bar_notification_info_overflow = 0x7f0f0097;
+        public static final int status_bar_notification_info_overflow = 0x7f0f009c;
     }
     public static final class style {
         public static final int TextAppearance_Compat_Notification = 0x7f10012b;
@@ -134,18 +134,18 @@ public final class R {
         public static final int TextAppearance_Compat_Notification_Time_Media = 0x7f100132;
         public static final int TextAppearance_Compat_Notification_Title = 0x7f100133;
         public static final int TextAppearance_Compat_Notification_Title_Media = 0x7f100134;
-        public static final int Widget_Compat_NotificationActionContainer = 0x7f1001a9;
-        public static final int Widget_Compat_NotificationActionText = 0x7f1001aa;
+        public static final int Widget_Compat_NotificationActionContainer = 0x7f1001aa;
+        public static final int Widget_Compat_NotificationActionText = 0x7f1001ab;
     }
     public static final class styleable {
-        public static final int[] FontFamily = { 0x7f0400b3, 0x7f0400b4, 0x7f0400b5, 0x7f0400b6, 0x7f0400b7, 0x7f0400b8 };
+        public static final int[] FontFamily = { 0x7f0400b6, 0x7f0400b7, 0x7f0400b8, 0x7f0400b9, 0x7f0400ba, 0x7f0400bb };
         public static final int FontFamily_fontProviderAuthority = 0;
         public static final int FontFamily_fontProviderCerts = 1;
         public static final int FontFamily_fontProviderFetchStrategy = 2;
         public static final int FontFamily_fontProviderFetchTimeout = 3;
         public static final int FontFamily_fontProviderPackage = 4;
         public static final int FontFamily_fontProviderQuery = 5;
-        public static final int[] FontFamilyFont = { 0x01010532, 0x01010533, 0x0101053f, 0x7f0400b1, 0x7f0400b9, 0x7f0400ba };
+        public static final int[] FontFamilyFont = { 0x01010532, 0x01010533, 0x0101053f, 0x7f0400b4, 0x7f0400bc, 0x7f0400bd };
         public static final int FontFamilyFont_android_font = 0;
         public static final int FontFamilyFont_android_fontWeight = 1;
         public static final int FontFamilyFont_android_fontStyle = 2;

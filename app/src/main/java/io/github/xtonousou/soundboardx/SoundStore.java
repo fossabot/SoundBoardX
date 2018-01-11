@@ -13,13 +13,9 @@ abstract class SoundStore {
             case 1:
                 return getAllSounds(context);
             case 2:
-                return getFunnySounds(context);
+                return getRingtones(context);
             case 3:
-                return getGamesSounds(context);
-            case 4:
-                return getMoviesSounds(context);
-            case 5:
-                return getMusicSounds(context);
+                return getNotifications(context);
         }
         return null;
     }
@@ -42,78 +38,40 @@ abstract class SoundStore {
         return sounds;
     }
 
-    static ArrayList<Sound> getFunnySounds(Context context) {
+    static ArrayList<Sound> getRingtones(Context context) {
         Resources res = context.getApplicationContext().getResources();
 
-        TypedArray funnySounds = res.obtainTypedArray(R.array.funnySounds);
-        TypedArray funnySoundsIDs = res.obtainTypedArray(R.array.funnySoundsIDs);
+        TypedArray ringtones = res.obtainTypedArray(R.array.ringtones);
+        TypedArray ringtonesIDs = res.obtainTypedArray(R.array.ringtonesIDs);
 
         ArrayList<Sound> sounds = new ArrayList<>();
 
-        final int funnySounds_length = funnySounds.length();
+        final int funnySounds_length = ringtones.length();
         for (int i = 0; i < funnySounds_length; i++) {
-            sounds.add(new Sound(funnySounds.getString(i), funnySoundsIDs.getResourceId(i, -1)));
+            sounds.add(new Sound(ringtones.getString(i), ringtonesIDs.getResourceId(i, -1)));
         }
 
-        funnySounds.recycle();
-        funnySoundsIDs.recycle();
+        ringtones.recycle();
+        ringtonesIDs.recycle();
 
         return sounds;
     }
 
-    static ArrayList<Sound> getGamesSounds(Context context) {
+    static ArrayList<Sound> getNotifications(Context context) {
         Resources res = context.getApplicationContext().getResources();
 
-        TypedArray gamesSounds = res.obtainTypedArray(R.array.gamesSounds);
-        TypedArray gamesSoundsIDs = res.obtainTypedArray(R.array.gamesSoundsIDs);
+        TypedArray notifications = res.obtainTypedArray(R.array.notifications);
+        TypedArray notificationsIDs = res.obtainTypedArray(R.array.notificationsIDs);
 
         ArrayList<Sound> sounds = new ArrayList<>();
 
-        final int gamesSounds_length = gamesSounds.length();
-        for (int i = 0; i < gamesSounds_length; i++) {
-            sounds.add(new Sound(gamesSounds.getString(i), gamesSoundsIDs.getResourceId(i, -1)));
+        final int funnySounds_length = notifications.length();
+        for (int i = 0; i < funnySounds_length; i++) {
+            sounds.add(new Sound(notifications.getString(i), notificationsIDs.getResourceId(i, -1)));
         }
 
-        gamesSounds.recycle();
-        gamesSoundsIDs.recycle();
-
-        return sounds;
-    }
-
-    static ArrayList<Sound> getMoviesSounds(Context context) {
-        Resources res = context.getApplicationContext().getResources();
-
-        TypedArray moviesSounds = res.obtainTypedArray(R.array.moviesSounds);
-        TypedArray moviesSoundsIDs = res.obtainTypedArray(R.array.moviesSoundsIDs);
-
-        ArrayList<Sound> sounds = new ArrayList<>();
-
-        final int moviesSounds_length = moviesSounds.length();
-        for (int i = 0; i < moviesSounds_length; i++) {
-            sounds.add(new Sound(moviesSounds.getString(i), moviesSoundsIDs.getResourceId(i, -1)));
-        }
-
-        moviesSounds.recycle();
-        moviesSoundsIDs.recycle();
-
-        return sounds;
-    }
-
-    static ArrayList<Sound> getMusicSounds(Context context) {
-        Resources res = context.getApplicationContext().getResources();
-
-        TypedArray musicSounds = res.obtainTypedArray(R.array.musicSounds);
-        TypedArray musicSoundsIDs = res.obtainTypedArray(R.array.musicSoundsIDs);
-
-        ArrayList<Sound> sounds = new ArrayList<>();
-
-        final int musicSounds_length = musicSounds.length();
-        for (int i = 0; i < musicSounds_length; i++) {
-            sounds.add(new Sound(musicSounds.getString(i), musicSoundsIDs.getResourceId(i, -1)));
-        }
-
-		musicSounds.recycle();
-		musicSoundsIDs.recycle();
+        notifications.recycle();
+        notificationsIDs.recycle();
 
         return sounds;
     }

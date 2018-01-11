@@ -4,7 +4,17 @@
             "outputFile": "/home/xtonousou/docs/projects/androidstudioprojects/SoundBoardX/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/3ec266a0d68f16d99c793688350bcdc4/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/97d59f617a33345ac0b943847660fabd/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,193,263,337,413,472,543",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "119,188,258,332,408,467,538,606"
+                    }
+                },
+                {
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialize-1.1.2.aar/ea5fd4434a015f066099ab4fc20e97bb/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,24 +31,7 @@
                     }
                 },
                 {
-                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.2.aar/1ec8385e2c105a0611fc0b667d9c533f/res/values-sw600dp-v13/values-sw600dp-v13.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "63",
-                        "endOffsets": "114"
-                    },
-                    "to": {
-                        "startLines": "18",
-                        "startColumns": "4",
-                        "startOffsets": "1170",
-                        "endColumns": "63",
-                        "endOffsets": "1229"
-                    }
-                },
-                {
-                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/9c3fb5b1fb70902be5aaba06fea342cb/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/6259752171e33e67e2afe8814223680f/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -57,13 +50,20 @@
                     }
                 },
                 {
-                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/f298e36892c98570750df0ef5bac854e/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/home/xtonousou/.gradle/caches/transforms-1/files-1.1/materialdrawer-6.0.2.aar/3439756a6efad36e714143925aebd679/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,124,193,263,337,413,472,543",
-                        "endColumns": "68,68,69,73,75,58,70,67",
-                        "endOffsets": "119,188,258,332,408,467,538,606"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "63",
+                        "endOffsets": "114"
+                    },
+                    "to": {
+                        "startLines": "18",
+                        "startColumns": "4",
+                        "startOffsets": "1170",
+                        "endColumns": "63",
+                        "endOffsets": "1229"
                     }
                 }
             ]

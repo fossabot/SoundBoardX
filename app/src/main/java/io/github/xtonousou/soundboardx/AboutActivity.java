@@ -1,15 +1,20 @@
 package io.github.xtonousou.soundboardx;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Icon;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
 
-import java.io.File;
+import com.mikepenz.fontawesome_typeface_library.FontAwesome;
+import com.mikepenz.iconics.IconicsDrawable;
+
 import java.util.Calendar;
 
 import mehdi.sakout.aboutpage.AboutPage;
@@ -21,25 +26,37 @@ public class AboutActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		String author = getString(R.string.author);
-
 		View aboutPage = new AboutPage(AboutActivity.this)
 				.isRTL(false)
 				.setCustomFont(getString(R.string.roboto_r))
 				.setDescription(getString(R.string.app_description))
 				.setImage(R.mipmap.ic_launcher)
+				.addItem(getPrivacyPolicyElement())
 				.addGroup(getString(R.string.connect))
 				.addEmail(getString(R.string.mail))
-				.addWebsite(getString(R.string.website))
-				.addGitHub(author + File.separator + getString(R.string.app_name))
-				//.addFacebook(author)
-				.addTwitter(author)
-				.addInstagram(author)
 				.addItem(getVersionElement())
 				.addItem(getCopyRightsElement())
 				.create();
 
 		setContentView(aboutPage);
+	}
+
+	Element getPrivacyPolicyElement() {
+		IconicsDrawable icon = new IconicsDrawable(this)
+				.icon(FontAwesome.Icon.faw_unlock_alt)
+				.sizeDp(24);
+
+		Element privacyPolicyElement = new Element();
+		privacyPolicyElement.setGravity(Gravity.LEFT);
+		privacyPolicyElement.setTitle(getString(R.string.privacy_policy));
+		//privacyPolicyElement.setIconDrawable(); // set icon manually if wanted, place it inside
+		// hdpi folders
+
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setData(Uri.parse("http://www.example.com"));
+
+		privacyPolicyElement.setOnClickListener(view -> startActivity(intent));
+		return privacyPolicyElement;
 	}
 
 	Element getVersionElement() {

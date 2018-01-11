@@ -12,6 +12,8 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -23,11 +25,16 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
 import com.github.ivbaranov.mfb.MaterialFavoriteButton;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -60,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
 	private MaterialFavoriteButton mFavButton;
 	private BroadcastReceiver mPowerSaverChangeReceiver;
 
+	private InterstitialAd mAdToolbar;
+	private InterstitialAd mAdSearch;
+	private InterstitialAd mAdSetAs;
+
 	/*
 	 * Do not change the order of the code.
 	 */
@@ -72,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
 		handleReflections();
 		handlePermissions();
 
+		handleAds();
+
 		handleFAB();
 		handleView();
 		handleTitle();
@@ -79,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
 		handleDrawer();
 
 		handlePowerSaverMode();
+
 	}
 
 	@Override
@@ -261,6 +275,50 @@ public class MainActivity extends AppCompatActivity {
 				((SoundAdapter) mView.getAdapter()).showPrevious();
 			}
 		});
+
+		mToolbar.setOnClickListener(view -> {
+			Handler mHandler = new Handler(Looper.getMainLooper());
+			Runnable displayAd = new Runnable() {
+				public void run() {
+					runOnUiThread(new Runnable() {
+						public void run() {
+							if (mAdToolbar.isLoaded()) {
+								mAdToolbar.show();
+							}
+						}
+					});
+				}
+			};
+
+			mAdToolbar.loadAd(new AdRequest.Builder().build());
+			mAdToolbar.setAdListener(new AdListener() {
+				@Override
+				public void onAdLoaded() {
+					// Code to be executed when an ad finishes loading.
+					mAdToolbar.show();
+				}
+
+				@Override
+				public void onAdFailedToLoad(int errorCode) {
+					// Code to be executed when an ad request fails.
+				}
+
+				@Override
+				public void onAdOpened() {
+					// Code to be executed when the ad is displayed.
+				}
+
+				@Override
+				public void onAdLeftApplication() {
+					// Code to be executed when the user has left the app.
+				}
+
+				@Override
+				public void onAdClosed() {
+					// Code to be executed when when the interstitial ad is closed.
+				}
+			});
+		});
 	}
 
     private void handleView() {
@@ -355,56 +413,42 @@ public class MainActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName(R.string.all)
 								.withIdentifier(1)
                                 .withSetSelected(false)
-                                .withIcon(FontAwesome.Icon.faw_asterisk)
+                                .withIcon(FontAwesome.Icon.faw_list)
                                 .withSelectedColor(selectedColor)
                                 .withSelectedTextColor(mColor)
                                 .withSelectedIconColor(mColor),
-                        new PrimaryDrawerItem().withName(R.string.funny)
+                        new PrimaryDrawerItem().withName(R.string.ringtones)
 								.withIdentifier(2)
-                                .withIcon(FontAwesome.Icon.faw_smile_o)
+                                .withIcon(FontAwesome.Icon.faw_music)
                                 .withIconTintingEnabled(false)
                                 .withSelectedColor(selectedColor)
                                 .withSelectedTextColor(mColor)
                                 .withSelectedIconColor(mColor),
-                        new PrimaryDrawerItem().withName(R.string.games)
+                        new PrimaryDrawerItem().withName(R.string.notifications)
 								.withIdentifier(3)
-                                .withIcon(FontAwesome.Icon.faw_gamepad)
+                                .withIcon(FontAwesome.Icon.faw_bell)
 								.withIconTintingEnabled(false)
                                 .withSelectedColor(selectedColor)
                                 .withSelectedTextColor(mColor)
                                 .withSelectedIconColor(mColor),
-                        new PrimaryDrawerItem().withName(R.string.movies)
-								.withIdentifier(4)
-                                .withIcon(FontAwesome.Icon.faw_video_camera)
-								.withIconTintingEnabled(false)
-                                .withSelectedColor(selectedColor)
-                                .withSelectedTextColor(mColor)
-                                .withSelectedIconColor(mColor),
-						new PrimaryDrawerItem().withName(R.string.music)
-								.withIdentifier(5)
-								.withIcon(FontAwesome.Icon.faw_music)
-								.withIconTintingEnabled(false)
-								.withSelectedColor(selectedColor)
-								.withSelectedTextColor(mColor)
-								.withSelectedIconColor(mColor),
                         new SectionDrawerItem().withName(R.string.options)
-								.withIdentifier(6)
+								.withIdentifier(4)
                                 .withDivider(false)
                                 .withTextColor(mColor),
                         new SecondarySwitchDrawerItem().withName(R.string.particles)
-								.withIdentifier(7)
+								.withIdentifier(5)
                                 .withIcon(FontAwesome.Icon.faw_magic)
 								.withIconTintingEnabled(false)
                                 .withSelectable(false)
                                 .withChecked(true)
                                 .withOnCheckedChangeListener(onToggleParticleListener),
 						new SecondaryDrawerItem().withName(R.string.color)
-								.withIdentifier(8)
+								.withIdentifier(6)
 								.withIcon(FontAwesome.Icon.faw_paint_brush)
 								.withIconTintingEnabled(false)
 								.withSelectable(false),
 						new SecondaryDrawerItem().withName(R.string.about)
-								.withIdentifier(9)
+								.withIdentifier(7)
 								.withIcon(FontAwesome.Icon.faw_book)
 								.withIconTintingEnabled(false)
 								.withSelectable(false)
@@ -426,39 +470,25 @@ public class MainActivity extends AppCompatActivity {
 							if (SharedPrefs.getInstance().areFavoritesShown())
 								mFavButton.toggleFavorite();
                             ((SoundAdapter) mView.getAdapter())
-									.showFunnySounds(MainActivity.this);
+									.showRingtones(MainActivity.this);
                             break;
                         case 3:
                             mView.setAdapter(new SoundAdapter(MainActivity.this));
 							if (SharedPrefs.getInstance().areFavoritesShown())
 								mFavButton.toggleFavorite();
                             ((SoundAdapter) mView.getAdapter())
-									.showGamesSounds(MainActivity.this);
+									.showNotifications(MainActivity.this);
                             break;
-                        case 4:
-                            mView.setAdapter(new SoundAdapter(MainActivity.this));
-							if (SharedPrefs.getInstance().areFavoritesShown())
-								mFavButton.toggleFavorite();
-                            ((SoundAdapter) mView.getAdapter())
-									.showMoviesSounds(MainActivity.this);
-                            break;
-						case 5:
-							mView.setAdapter(new SoundAdapter(MainActivity.this));
-							if (SharedPrefs.getInstance().areFavoritesShown())
-								mFavButton.toggleFavorite();
-							((SoundAdapter) mView.getAdapter())
-									.showMusicSounds(MainActivity.this);
-							break;
 						/* Options title
-						case 6:
+						case 4:
 							break;*/
 						/* Particle switch, handled by listener
-						case 7:
+						case 5:
 							break;*/
-						case 8:
+						case 6:
 							handleColorPicker();
 							break;
-						case 9:
+						case 7:
 							startActivity(new Intent(MainActivity.this,
 									AboutActivity.class));
 							break;
@@ -489,6 +519,18 @@ public class MainActivity extends AppCompatActivity {
 				mColorPicker.dismissDialog();
 			}
 		}).setColumns(4).setRoundColorButton(true).show();
+	}
+
+	private void handleAds() {
+		MobileAds.initialize(this, "ca-app-pub-2735560796599792~5359217321");
+
+		mAdToolbar = new InterstitialAd(MainActivity.this);
+		mAdSearch = new InterstitialAd(MainActivity.this);
+		mAdSetAs = new InterstitialAd(MainActivity.this);
+
+		mAdToolbar.setAdUnitId("ca-app-pub-2735560796599792/7562051631");
+		mAdSearch.setAdUnitId("ca-app-pub-2735560796599792/4168891099");
+		mAdSetAs.setAdUnitId("ca-app-pub-2735560796599792/3239663243");
 	}
 
 	private final OnCheckedChangeListener onToggleParticleListener = (drawerItem, buttonView, isChecked)

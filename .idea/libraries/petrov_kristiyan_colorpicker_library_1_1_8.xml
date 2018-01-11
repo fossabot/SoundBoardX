@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="petrov.kristiyan:colorpicker-library-1.1.8">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.8.aar/4022d6e1c14118df8521ee5f74402faa/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.8.aar/4022d6e1c14118df8521ee5f74402faa/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.8.aar/dfe9f283eec01806a47e7b7a292cc37b/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/colorpicker-library-1.1.8.aar/dfe9f283eec01806a47e7b7a292cc37b/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
