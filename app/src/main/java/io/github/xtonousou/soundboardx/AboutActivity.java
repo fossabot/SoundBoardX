@@ -54,8 +54,8 @@ public class AboutActivity extends Activity {
 
 		Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setData(Uri.parse("http://www.example.com"));
+		privacyPolicyElement.setIntent(intent);
 
-		privacyPolicyElement.setOnClickListener(view -> startActivity(intent));
 		return privacyPolicyElement;
 	}
 
